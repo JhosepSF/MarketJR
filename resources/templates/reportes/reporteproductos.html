@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Reporte Productos</title>
+	<!-- DataTable -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
+	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/reporteproductostyle.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="icon" type="image/png" href="https://img.icons8.com/external-solidglyph-m-oki-orlando/32/12B886/external-minimarket-retail-solid-solidglyph-m-oki-orlando.png">
+</head>
+<body>
+	<div class="wrapper">
+		<aside id="sidebar">
+			<div class="h-100">
+				<div class="sidebar-logo">
+					<a href="#">MINIMARKET J&R</a>
+				</div>
+				<ul class="sidebar-nav">
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link">
+							<i class="icon ion-md-home"></i>
+							Menú Principal
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
+							aria-expanded="false"><i class="icon ion-md-settings pe-2" id="mantenimiento"></i>
+							Mantenimiento
+						</a>
+						<ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="usuarios">Usuarios</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link collapsed" data-bs-target="#inventory" data-bs-toggle="collapse"
+							aria-expanded="false"><i class="icon ion-md-clipboard pe-2" id="inventario"></i>
+							Inventario
+						</a>
+						<ul id="inventory" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="productos">Productos</a>
+							</li>
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="categorias">Categorias</a>
+							</li>
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="marcas">Marcas</a>
+							</li>
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="unidad">Unidad de Medida</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link collapsed" data-bs-target="#buys" data-bs-toggle="collapse"
+							aria-expanded="false"><i class="icon ion-md-cart pe-2" id="buy"></i>
+							Compras
+						</a>
+						<ul id="buys" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="compras">Compras</a>
+							</li>
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="proveedor">Proveedor</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link collapsed" data-bs-target="#sent" data-bs-toggle="collapse"
+							aria-expanded="false"><i class="icon ion-md-card pe-2" id="ventas"></i>
+							Ventas
+						</a>
+						<ul id="sent" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="apertura">Aperturar caja</a>
+							</li>
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="pedido">Registro de Ventas</a>
+							</li>
+							<li class="sidebar-item">
+								<a href="#" class="sidebar-link" id="cerrar">Cerrar Caja</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link" id="reporte">
+							<i class="icon ion-md-copy pe-2"></i>
+							Reportes
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<div class="main">
+			<nav class="navbar navbar-expand px-3 border-bottom">
+				<button class="btn" id="sidebar-toggle" type="button">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse navbar">
+					<ul class="navbar-nav">
+						<span class="nav-text py-3" id="user">Usuario: <span id="nombreUsuario"></span></span>
+						<li class="nav-item dropdown">
+							<a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+								<img src="/img/profile.jpg" class="avatar img-fluid rounded" alt="" />
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a href="#" class="dropdown-item" id="sesion"> Cerrar Sesion </a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content mx-4 py-2">
+				<div class="cointainer-fluid">
+					<div class="mb-3">
+						<h3 class="word-line">Reporte de Productos Bajo Stock</h3>
+					</div>
+					<div class="row reduce-lateral-margin">
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+							<div class="d-flex justify-content-center align-items-center" style="margin-left: 40px;">
+								<div id="lengthMenuContainer"></div>
+							</div>
+
+							<div class="d-flex justify-content-center align-items-center">
+
+								<table id="datatable_users" class="table table-striped">
+									<caption>
+
+									</caption>
+									<thead>
+										<tr>
+											<th class="centered">Id</th>
+											<th class="centered">Producto</th>
+											<th class="centered">Categoria</th>
+											<th class="centered">Marca</th>
+											<th class="centered">Unidad de Medida</th>
+											<th class="centered">Stock</th>
+										</tr>
+									</thead>
+									<tbody id="tableBody_users"></tbody>
+								</table>
+							</div>
+
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+							<div class="container">
+								<div style="text-align: center; margin-bottom: -70px; margin-top: 50px;">
+									<button type="button" class="btn btn-outline-primary" id="barra">Barra</button>
+									<button type="button" class="btn btn-outline-secondary" id="circular">Circular</button>
+								</div>
+								<div class="row justify-content-center align-items-center" style="height: 700px;">
+									<div class="col-md-6">
+										<canvas id="myChart" width="700" height="700"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<!-- Bootstrap-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<!-- DataTable -->
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+
+
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<script src="/js/reporteproductoscript.js"></script>
+</body>
+
+</html>

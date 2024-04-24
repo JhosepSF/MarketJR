@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proveedores Inactivos</title>
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/proveedorinactivostyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/png" href="https://img.icons8.com/external-solidglyph-m-oki-orlando/32/12B886/external-minimarket-retail-solid-solidglyph-m-oki-orlando.png">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main">
+
+        <main class="content mx-4 py-2">
+          <div class="cointainer-fluid">
+            <div class="mb-3">
+              <h3 class="word-line">PROVEEDORES INACTIVOS</h3>
+            </div>
+
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+            </div>
+            <!-- Tabla-->
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <table id="datatable_proveedores" class="table table-striped">
+                  <caption></caption>
+                  <thead>
+                    <tr>
+                      <th class="centered">RUC</th>
+                      <th class="centered">Razon Social</th>
+                      <th class="centered">Representante</th>
+                      <th class="centered">Dirección</th>
+                      <th calss="centered">Telefono</th>
+                      <th class="centered">Observación</th>
+                      <th class="centered">Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody_proveedores"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+	        <div class="acciones">
+	      <button id="btnAtras" class="btn btn-success">
+	        <i class="fas fa-arrow-left"></i> Atras
+	      </button>
+	      </div>
+    </div>
+    </div>
+    
+    <!-- de aqui empieza esa vaina de prueba para la ventana del editar -->
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">
+              Editar datos del usuario
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="editModalBody"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-primary" id="saveChangesBtn">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/proveedorinactivoscript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- DataTable -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>
+

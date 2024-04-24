@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Compra</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/registrocomprastyle.css" />
+  	<link rel="icon" type="image/png" href="https://img.icons8.com/external-solidglyph-m-oki-orlando/32/12B886/external-minimarket-retail-solid-solidglyph-m-oki-orlando.png">
+  </head>
+  <body>
+    <h1 align="center">
+      <i class="fas fa-shopping-cart" style="margin-right: 15px"></i>
+      REGISTRO DE COMPRAS
+      <i class="fas fa-shopping-cart" style="margin-left: 15px"></i>
+    </h1>
+
+    <div class="firts-section">
+      <form>
+        <div id="Container-Prov">
+          <fieldset>
+            <legend>Datos del Proveedor</legend>
+
+            <label for="ruc">RUC:</label>
+            <input type="text" id="ruc" required />
+            <button id="busPROV" type="button" class="btn btn-primary">Buscar</button>
+            
+            <label for="razo">Razón Social:</label>
+            <input type="text" id="razo" required readonly/>
+            <label for="direc">Dirección:</label>
+            <input type="text" id="direc" required readonly/>
+          </fieldset>
+        </div>
+        <div id="Container-Comp">
+          <fieldset>
+            <legend>Datos de la Compra</legend>
+
+            <label for="tipcom">Tipo de Comprobante:</label>
+            <select id="tipcom" required>
+              <option value="" disabled selected>Seleccionar Comprobante:</option>         
+              <option value="Factura">Factura</option>
+              <option value="Boleta">Boleta</option>
+            </select>
+            <label for="nrserie">N° de Serie:</label>
+            <input type="text" id="nrserie" required/>
+            <label for="nrcompro">N° de Comprobante:</label>
+            <input type="text" id="nrcompro" required/><br />
+            <label for="fchpg">Fecha de Compra:</label>
+            <input type="date" id="fchpg" required/>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+
+    <div class="container-Table" style="text-align: center">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <table id="datatable_users" class="table table-striped">
+            <caption></caption>
+            <thead>
+              <tr>
+                <th class="centered">Descripción</th>
+                <th class="centered">Cantidad</th>
+                <th class="centered">P.U</th>
+                <th class="centered">Subtotal</th>
+                <th class="centered">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+					<input class="form-control" list="datalistOptions1" id="input_datalistOptions1" placeholder="Escribe..." required>
+					<datalist id="datalistOptions1">
+					</datalist>
+				</td>
+                <td contenteditable="true" oninput="validarNumerico(this)" required></td>
+                <td contenteditable="true" oninput="validarNumerico(this)" required></td>
+                <td contenteditable="false"></td>
+                <td class="actions">
+                  <button class="btn btn-danger" onclick="eliminarFila(this)">
+                    <i class="fas fa-trash"></i> Eliminar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col-sm-2 col-md-1 col-lg-1 col-xl-1">
+            <button class="btn btn-success" onclick="agregarFila()">
+              <i class="fas fa-plus"></i> Agregar Fila
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="opciones-totales">
+      <div class="opciones-compra">
+        <input
+          type="radio"
+          id="compraContado"
+          name="opcionCompra"
+          value="Pagado"
+          checked
+        />
+        <label for="compraContado">Compra Contado</label><br />
+        <input
+          type="radio"
+          id="compraCredito"
+          name="opcionCompra"
+          value="Adeuda"
+        />
+        <label for="compraCredito">Compra Crédito</label>
+      </div>
+
+      <div class="totales">
+        <label for="subtotal">SubTotal:</label>
+        <input type="text" id="subtotal" readonly/> <br />
+        <label for="igv">IGV:</label>
+        <input type="text" id="igv" readonly/> <br/>
+        <label for="total">Total:</label>
+        <input type="text" id="total" readonly />
+      </div>
+
+      <div class="acciones">
+        <button id="btnGrabar" class="btn btn-success">
+          <i class="fas fa-save"></i> Grabar
+        </button>
+        <button id="btnCancelar" class="btn btn-danger" onclick="cancelar()">
+          <i class="fas fa-times"></i> Cancelar
+        </button>
+      </div>
+    </div>
+    <script src="js/registrocomprascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

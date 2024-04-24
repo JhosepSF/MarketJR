@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte</title>
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/reportestyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/png" href="https://img.icons8.com/external-solidglyph-m-oki-orlando/32/12B886/external-minimarket-retail-solid-solidglyph-m-oki-orlando.png">
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside id="sidebar">
+        <div class="h-100">
+          <div class="sidebar-logo">
+            <a href="#">MINIMARKET J&R</a>
+          </div>
+          <ul class="sidebar-nav">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <i class="icon ion-md-home"></i>
+                Menú Principal
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#pages"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="icon ion-md-settings pe-2" id="mantenimiento"></i>
+                Mantenimiento
+              </a>
+              <ul
+                id="pages"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="usuarios">Usuarios</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#inventory"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="icon ion-md-clipboard pe-2" id="inventario"></i>
+                Inventario
+              </a>
+              <ul
+                id="inventory"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="productos">Productos</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="categorias">Categorias</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="marcas">Marcas</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="unidad">Unidad de Medida</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#buys"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="icon ion-md-cart pe-2" id="buy"></i>
+                Compras
+              </a>
+              <ul
+                id="buys"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="compras">Compras</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="proveedor">Proveedor</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#sent"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="icon ion-md-card pe-2" id="ventas"></i>
+                Ventas
+              </a>
+              <ul
+                id="sent"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="apertura">Aperturar caja</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="pedido">Registro de Ventas</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="cerrar">Cerrar Caja</a>
+                </li>
+              </ul>
+            </li>
+          	
+          	<li class="sidebar-item">
+              <a href="#" class="sidebar-link" id="reporte">
+				  <i class="icon ion-md-copy pe-2"></i>
+				  Reportes
+			  </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <div class="main">
+        <nav class="navbar navbar-expand px-3 border-bottom">
+          <button class="btn" id="sidebar-toggle" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse navbar">
+            <ul class="navbar-nav">
+			  <span class="nav-text py-3" id="user">Usuario: <span id="nombreUsuario"></span></span>
+			  <li class="nav-item dropdown">
+			    <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+			      <img src="img/profile.jpg" class="avatar img-fluid rounded" alt="" />
+			    </a>
+			    <div class="dropdown-menu dropdown-menu-end">
+			      <a href="#" class="dropdown-item" id="sesion"> Cerrar Sesion </a>
+			    </div>
+			  </li>
+			</ul>
+          </div>
+        </nav>
+        <div class="centered" style="margin-bottom: 10px;">
+          <h2 class="word-line">
+            REPORTES
+          </h2>
+        </div>
+        <div class="container mt-2">
+          <div class="row" id="cartas">
+            <div class="col-md-6 mb-4">
+              <div class="card m-4">
+                <h6 class="card-header bg-primary text-center text-white">Ingresos</h6>
+                <div class="card-body text-black"> 
+                  <div class="d-flex align-items-center justify-content-center" style="text-align: center;">
+                    <img width="70" height="70" src="https://img.icons8.com/fluency/48/stocks-growth--v1.png" alt="get-revenue" style="margin-left: 10px; margin-right: 20px;"/>
+                    <div>
+                      <p class="card-text m-0">Ingresos obtenidos por ventas</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="/reportes/ingresos" class="btn btn-outline-primary" id="ingresosdia" style="margin-right: 10px;">Dia
+                      <i class="fas fa-eye"></i>
+                    </a> 
+                    <a href="/reportes/ingresosmes" class="btn btn-outline-primary" id="ingresosmes" style="margin-right: 10px;">Mes
+                      <i class="fas fa-eye"></i>
+                    </a> 
+                    <a href="/reportes/ingresosanual" class="btn btn-outline-primary" id="ingresosano" style="margin-right: 10px;">Año
+                      <i class="fas fa-eye"></i>
+                    </a> 
+                  </div> 
+                </div>
+              </div>
+            </div> 
+            
+            <div class="col-md-6 mb-4">
+              <div class="card m-4">
+                <h6 class="card-header bg-warning text-center text-white">Gastos</h6>
+                <div class="card-body text-black"> 
+                  <div class="d-flex align-items-center justify-content-center" style="text-align: center;">
+                    <img width="70" height="70" src="https://img.icons8.com/color/48/tax.png" alt="get-revenue" style="margin-left: 10px; margin-right: 20px;"/>
+                    <div>
+                      <p class="card-text m-0">Costos derivados por compra de productos</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="/reportes/gastos" class="btn btn-outline-warning" id="gastosdia" style="margin-right: 10px;">Dia
+                      <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="/reportes/gastosmes" class="btn btn-outline-warning" id="gastosmes" style="margin-right: 10px;">Mes
+                      <i class="fas fa-eye"></i>
+                    </a> 
+                    <a href="/reportes/gastosanual" class="btn btn-outline-warning" id="gastosano" style="margin-right: 10px;">Año
+                      <i class="fas fa-eye"></i>
+                    </a>  
+                  </div> 
+                </div>
+              </div>
+            </div>  
+        
+            <div class="col-md-6 mb-4">
+              <div class="card m-4">
+                <h6 class="card-header bg-success text-center text-white">Ganancias</h6>
+                <div class="card-body text-black"> 
+                  <div class="d-flex align-items-center justify-content-center" style="text-align: center;">
+                    <img width="70" height="70" src="https://img.icons8.com/color/48/accumulate.png" alt="get-revenue" style="margin-left: 10px; margin-right: 20px;"/>
+                    <div>
+                      <p class="card-text m-0">Rentabilidad del negocio</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="/reportes/ganancias" class="btn btn-outline-success" id="gananciasdia" style="margin-right: 10px;">Dia
+                      <i class="fas fa-eye"></i>
+                    </a> 
+                    <a href="/reportes/gananciasmes" class="btn btn-outline-success" id="gananciasmes" style="margin-right: 10px;">Mes
+                      <i class="fas fa-eye"></i>
+                    </a> 
+                    <a href="/reportes/gananciasanual" class="btn btn-outline-success" id="gananciasano" style="margin-right: 10px;">Año
+                      <i class="fas fa-eye"></i>
+                    </a> 
+                  </div> 
+                </div>
+              </div>
+            </div> 
+
+            <div class="col-md-6 mb-4">
+              <div class="card m-4">
+                <h6 class="card-header bg-danger text-center text-white">Productos Bajo Stock</h6>
+                <div class="card-body text-black"> 
+                  <div class="d-flex align-items-center justify-content-center" style="text-align: center;">
+                    <img width="70" height="70" src="https://img.icons8.com/color/48/shopping-basket-2.png" alt="get-revenue" style="margin-left: 10px; margin-right: 20px;"/>
+                    <div>
+                      <p class="card-text m-0">Productos con stock menor a 10</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="/reportes/productos" class="btn btn-outline-danger" id="productos">Ver detalle
+                      <i class="fas fa-eye"></i>
+                    </a> 
+                  </div> 
+                </div>
+              </div>
+            </div>           
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/reportescript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- DataTable -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>

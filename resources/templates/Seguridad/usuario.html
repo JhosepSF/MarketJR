@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuarios</title>
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/usuariostyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside id="sidebar">
+        <div class="h-100">
+          <div class="sidebar-logo">
+            <a href="#">MINIMARKET J&R</a>
+          </div>
+          <ul class="sidebar-nav">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <i class="icon ion-md-home"></i>
+                Menú Principal
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#pages"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="icon ion-md-settings pe-2" id="mantenimiento"></i>
+                Mantenimiento
+              </a>
+              <ul
+                id="pages"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="usuarios">Usuarios</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#inventory"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="icon ion-md-clipboard pe-2" id="inventario"></i>
+                Inventario
+              </a>
+              <ul
+                id="inventory"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="productos">Productos</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="categorias">Categorias</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="marcas">Marcas</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="unidad">Unidad de Medida</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#buys"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="icon ion-md-cart pe-2" id="buy"></i>
+                Compras
+              </a>
+              <ul
+                id="buys"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="compras">Compras</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="proveedor">Proveedor</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#sent"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                ><i class="icon ion-md-card pe-2" id="ventas"></i>
+                Ventas
+              </a>
+              <ul
+                id="sent"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="apertura">Aperturar caja</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="pedido">Registro de Ventas</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link" id="cerrar">Cerrar Caja</a>
+                </li>
+              </ul>
+            </li>
+			<li class="sidebar-item">
+              <a href="#" class="sidebar-link" id="reporte">
+				  <i class="icon ion-md-copy pe-2"></i>
+				  Reportes
+			  </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <div class="main">
+        <nav class="navbar navbar-expand px-3 border-bottom">
+          <button class="btn" id="sidebar-toggle" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse navbar">
+            <ul class="navbar-nav">
+			  <span class="nav-text py-3" id="user">Usuario: <span id="nombreUsuario"></span></span>
+			  <li class="nav-item dropdown">
+			    <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+			      <img src="img/profile.jpg" class="avatar img-fluid rounded" alt="" />
+			    </a>
+			    <div class="dropdown-menu dropdown-menu-end">
+			      <a href="#" class="dropdown-item" id="sesion"> Cerrar Sesion </a>
+			    </div>
+			  </li>
+			</ul>
+          </div>
+        </nav>
+
+        <main class="content mx-4 py-2">
+          <div class="cointainer-fluid">
+            <div class="mb-3">
+              <h3 class="word-line">USUARIOS</h3>
+            </div>
+
+            <div class="mb-3 py-3">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo"
+              >
+                + Agregar usuario
+              </button>
+            </div>
+
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Nuevo Usuario
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+					  <form>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">DNI:</label>
+					    <input type="number" class="form-control" id="ndni" />
+					    <button type="button" id="buscar" class="btn btn-primary" style="margin-top: 10px">
+					      Buscar
+					    </button>
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Nombres:</label>
+					    <input type="text" class="form-control" id="nombre" readonly/>
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Apellidos:</label>
+					    <input type="text" class="form-control" id="apellido" readonly/>
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Correo Electrónico:</label>
+					    <input type="text" class="form-control" id="correo" maxlength="50"/>
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Dirección actual:</label>
+					    <input type="text" class="form-control" id="direccion" maxlength="50"/>
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Teléfono:</label>
+					    <input type="number" class="form-control" id="telefono" />
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Contraseña:</label>
+					    <input type="text" class="form-control" id="password" />
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Perfil:</label>
+					    <div class="dropdown">
+					      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+					        Seleccionar Perfil
+					      </button>
+					      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="listaPerfiles"></ul>
+					    </div>
+					  </div>
+					
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">El perfil seleccionado para el nuevo usuario es:</label>
+						<input type="text" class="form-control" id="perfilSelec" readonly/>
+					  </div>
+					</form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                      id="btnCancelar"
+                    >
+                      Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btnAceptar">
+					  Aceptar
+					</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tabla-->
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <table id="datatable_empleado" class="table table-striped">
+                  <caption></caption>
+                  <thead>
+                    <tr>
+                      <th class="centered">DNI</th>
+                      <th class="centered">Nombres</th>
+                      <th class="centered">Apellidos</th>
+                      <th class="centered">Correo</th>
+                      <th class="centered">Dirección</th>
+                      <th calss="centered">Telefono</th>
+                      <th calss="centered">Observacion</th>
+                      <th class="centered">Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody_empleado"></tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div class="mb-3 py-3">
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="btninactivos"
+              >
+                Usuarios Inactivos
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    
+    <!-- de aqui empieza esa vaina de prueba para la ventana del editar -->
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">
+              Editar datos del usuario
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="editModalBody"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-primary" id="saveChangesBtn">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/usuarioscript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- DataTable -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>

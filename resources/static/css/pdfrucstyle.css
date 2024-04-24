@@ -1,0 +1,97 @@
+body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 2px solid #ccc;
+        margin-top: 10px;
+        border-radius: 10px;
+        background-color: #fffffc;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header h1,
+      .header p {
+        margin: 5px 0; /* Modificar el margen de los elementos h1 y h4 */
+      }
+      .info {
+        margin-bottom: 20px;
+        font-weight: bold;
+        border: 1px solid #a52b2b;
+        border-radius: 5px;
+      }
+      .info p {
+        margin: 5px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ccc;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      .cantidad {
+        width: 50px; /* Definir un ancho mínimo para la columna de cantidad */
+      }
+      .total {
+        text-align: right;
+      }
+      .avatar {
+        height: 100px;
+        width: 100px;
+      }
+      .pdf {
+        text-align: center;
+        margin: 4px;
+      }
+      .header {
+        display: flex; /* Utiliza flexbox para el diseño */
+        justify-content: space-between; /* Distribuye los elementos de forma equitativa */
+      }
+
+      #logo,
+      #empresa,
+      #datos {
+        flex: 1; /* Los divs se expandirán para llenar el espacio disponible */
+      }
+      #datos {
+        border: 1px solid #a52b2b;
+        border-radius: 5px;
+      }
+      #empresa {
+        margin-right: 40px;
+        margin-top: 20px;
+      }
+      #logo {
+        margin-right: 20px;
+      }
+
+      .total {
+        font-weight: bold;
+        border: 1px solid #a52b2b;
+        border-radius: 5px;
+      }
+      input[type="text"] {
+        border: 1px solid #fffffc;
+        border-radius: 5px;
+        box-shadow: 0 0 2px rgba(255, 255, 252, 0.5);
+      }
+      .custom-input {
+        width: 150px;
+        margin-right: 5px;
+        margin-top: 5px;
+        text-align: right;
+      }

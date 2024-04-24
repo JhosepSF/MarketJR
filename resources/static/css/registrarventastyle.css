@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;700&family=Poppins&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: white;
+}
+
+h1 {
+  color: dimgrey;
+  font-weight: normal;
+  font-size: 1.8em;
+  margin-left: 3%;
+  margin-top: 50px;
+  margin-bottom: 5px;
+}
+
+fieldset:disabled {
+  pointer-events: revert;
+  opacity: revert;
+}
+
+fieldset {
+  min-width: revert;
+  padding: revert;
+  margin: revert;
+  border: revert;
+  width: 470px;
+  margin-left: 34%;
+  margin-bottom: 15px;
+  border-color: dimgrey;
+  border-width: 0.2px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+label[for="tipcom"] {
+  margin-top: 20px;
+  margin-left: 45%;
+  color: rgb(27, 27, 27);
+  font-size: 1rem;
+}
+label[for="datclien"] {
+  margin-top: 10px;
+  margin-left: 46.4%;
+  color: rgb(27, 27, 27);
+  font-size: 1rem;
+}
+label[for="metpagos"] {
+  margin-top: 20px;
+  margin-left: 11%;
+  margin-bottom: 10px;
+  color: rgb(27, 27, 27);
+  font-size: 1rem;
+}
+label[for="total"] {
+  margin-left: 380px;
+  margin-bottom: 10px;
+  color: rgb(27, 27, 27);
+  font-size: 1rem;
+}
+label[for="fecha"] {
+  margin-top: 50px;
+  margin-left: 520px;
+  margin-bottom: 10px;
+  color: rgb(27, 27, 27);
+  font-size: 1rem;
+}
+label[for="hora"] {
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: rgb(27, 27, 27);
+  font-size: 1rem;
+}
+
+label[for="encarventa"] {
+  margin-top: 20px;
+  margin-left: 490px;
+  margin-bottom: 10px;
+  color: rgb(27, 27, 27);
+  font-size: 1rem;
+}
+
+#ventaFactura {
+  margin-left: 90px;
+}
+
+#ventaBoleta {
+  margin-left: 100px;
+}
+#dni {
+  width: 320px;
+  padding: 4px;
+  margin-top: 10px;
+  margin-left: 88px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+#raso {
+  width: 320px;
+  padding: 4px;
+  margin-left: 13px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+#ruc {
+  width: 320px;
+  padding: 4px;
+  margin-top: 10px;
+  margin-left: 80px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+#direcruc {
+  width: 320px;
+  padding: 4px;
+  margin-left: 38px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+#direcdni {
+  width: 320px;
+  padding: 4px;
+  margin-left: 38px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+#nombre {
+  width: 320px;
+  padding: 4px;
+  margin-left: 48px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+#ruc:focus,
+#raso:focus,
+#direc:focus,
+#dni:focus,
+#nombre:focus,
+#total:focus,
+#vuelto:focus,
+#pagosTarjeta:focus,
+#pagosYape:focus,
+#pagosEfectivo:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+.row {
+  width: 80%;
+  margin-top: 30px;
+  margin-left: 128px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+td {
+  max-width: 300px;
+  word-wrap: break-word;
+}
+td.actions {
+  text-align: center;
+}
+
+td.actions button.btn-danger {
+  padding: 2px 5px;
+  display: inline-block;
+  width: 70%;
+  margin: 0 auto;
+}
+button {
+  width: 200px;
+  padding: 7px;
+  margin-left: 120px;
+  margin-bottom: 20px;
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 6px rgba(13, 28, 29, 0.815);
+}
+
+.metodos-pago {
+  margin-left: 40%;
+}
+
+#pagoTarjeta,
+#pagoYape,
+#pagoEfectivo {
+  margin-bottom: 14px;
+}
+#pagosEfectivo,
+#pagosYape,
+#pagosTarjeta {
+  width: 200px;
+  padding: 4px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+.acciones {
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 24%;
+}
+
+button.busqueda-btn {
+  width: 150px;
+  padding: 7px;
+  background-color: dodgerblue;
+  margin-left: 285px;
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 6px rgba(13, 28, 29, 0.815);
+}
+#total {
+  width: 150px;
+  padding: 4px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+#fecha {
+  width: 150px;
+  padding: 4px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+#encarventa {
+  width: 320px;
+  padding: 4px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#hora {
+  width: 80px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+label[for="codven"] 
+{
+  margin-top: 20px;
+  margin-left: 640px;
+  margin-bottom: 10px;
+  color: rgb(27, 27, 27);
+  font-size: 1rem;
+}
+#codventa {
+  width: 80px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
